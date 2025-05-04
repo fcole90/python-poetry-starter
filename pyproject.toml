@@ -8,7 +8,12 @@ readme = "README.md"
 requires-python = ">=3.12,<4.0"
 dependencies = []
 
-
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+packages = [{ include = "src" }]
+
+[tool.poetry.scripts]
+main = "src.main:main"
