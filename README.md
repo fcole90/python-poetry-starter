@@ -11,5 +11,17 @@ poetry install
 ## Tests
 
 ```sh
-poetry run pytest
+poetry poe test
+```
+
+## Linting
+
+```sh
+poetry poe lint
+```
+
+## Typechecking
+
+```sh
+poetry poe typecheck
 ```
