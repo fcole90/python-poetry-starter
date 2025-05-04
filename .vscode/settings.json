@@ -28,10 +28,6 @@
   "python.analysis.typeCheckingMode": "strict",
   "python.analysis.useLibraryCodeForTypes": true,
   "python.languageServer": "Pylance",
-  "python.testing.cwd": "${workspaceFolder}/src",
-  "python.testing.pytestArgs": [
-    "--import-mode=importlib",
-  ],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true
 }

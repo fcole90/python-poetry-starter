@@ -16,6 +16,11 @@ pytest = "^8.3.5"
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.pytest.ini_options]
+minversion = "6.0"
+rootdir = "src"
+import-mode = "importlib"
+
 [tool.poetry]
 packages = [{ include = "src" }]
 
