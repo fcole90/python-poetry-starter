@@ -13,6 +13,7 @@ poethepoet = { version = "~0.34.0", extras = ["poetry_plugin"] }
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"
+black = "^25.1.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -31,3 +32,5 @@ main = "src.main:main"
 
 [tool.poe.tasks]
 test = "python -m pytest"
+lint = "python -m black --check \"src/**/*.py\""
+lint-fix = "python -m black \"src/**/*.py\""
