@@ -8,6 +8,9 @@ readme = "README.md"
 requires-python = ">=3.12,<4.0"
 dependencies = []
 
+[tool.poetry.group.dev.dependencies]
+poethepoet = { extras = ["poetry-plugin"], version = "^0.34.0" }
+
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
