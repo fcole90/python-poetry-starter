@@ -49,5 +49,5 @@ main = "src.main:main"
 [tool.poe.tasks]
 test = "python -m pytest"
 lint = "python -m black --check ./src"
-lint-fix = "python -m black \"./src/**/*.py\""
-typecheck = "python -m pyright  \"./src/**/*.py\""
+lint-fix = "python -m black ./src"
+typecheck = "python -m pyright ./src"
