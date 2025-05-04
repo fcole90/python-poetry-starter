@@ -8,8 +8,10 @@ readme = "README.md"
 requires-python = ">=3.12,<4.0"
 dependencies = []
 
+[tool.poetry.requires-plugins]
+poethepoet = { version = "~0.34.0", extras = ["poetry_plugin"] }
+
 [tool.poetry.group.dev.dependencies]
-poethepoet = { extras = ["poetry-plugin"], version = "^0.34.0" }
 pytest = "^8.3.5"
 
 [build-system]
@@ -26,3 +28,6 @@ packages = [{ include = "src" }]
 
 [tool.poetry.scripts]
 main = "src.main:main"
+
+[tool.poe.tasks]
+test = "python -m pytest"
