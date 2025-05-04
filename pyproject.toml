@@ -14,6 +14,7 @@ poethepoet = { version = "~0.34.0", extras = ["poetry_plugin"] }
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"
 black = "^25.1.0"
+pyright = "^1.1.400"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -23,6 +24,21 @@ build-backend = "poetry.core.masonry.api"
 minversion = "6.0"
 rootdir = "src"
 import-mode = "importlib"
+
+[tool.pyright]
+pythonVersion = "3.12"
+typeCheckingMode = "strict"
+useLibraryCodeForTypes = true
+exclude = ["**/__pycache__", "src/typings"]
+stubPath = "src/typings"
+reportUnknownVariableType = "warning"
+reportUnknownArgumentType = "none"
+reportUnknownParameterType = "warning"
+reportUnknownLambdaType = "warning"
+reportUnknownMemberAccess = "warning"
+reportUnknownMemberType = "none"
+reportUnknownModuleType = "warning"
+reportUnnecessaryTypeIgnoreComment = "warning"
 
 [tool.poetry]
 packages = [{ include = "src" }]
@@ -34,3 +50,4 @@ main = "src.main:main"
 test = "python -m pytest"
 lint = "python -m black --check \"src/**/*.py\""
 lint-fix = "python -m black \"src/**/*.py\""
+typecheck = "python -m pyright  \"src/**/*.py\""
