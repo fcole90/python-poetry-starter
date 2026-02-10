@@ -16,7 +16,8 @@ jobs:
     strategy:
       matrix:
         os:
-          - windows-latest
+          # Commented as Windows CI is currently broken due to https://github.com/python-poetry/poetry/issues/10028
+          # - windows-latest 
           - macos-latest
           - ubuntu-latest
     runs-on: ${{ matrix.os }}
