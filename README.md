@@ -1,4 +1,4 @@
-# Opinionated Python project starter with batteries included
+# Opinionated Python project starter with batteries included [![.github/workflows/ci.yaml](https://github.com/fcole90/python-poetry-starter/actions/workflows/ci.yaml/badge.svg)](https://github.com/fcole90/python-poetry-starter/actions/workflows/ci.yaml)
 
 This project is designed to be a quick-start for Python projects, providing a set of tools and configurations that make development easier. It includes:
 
