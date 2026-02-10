@@ -19,6 +19,8 @@ This project is designed to be a quick-start for Python projects, providing a se
 poetry install
 ```
 
+After this step you may want to close and reopen your terminal or IDE to ensure that the Poetry-managed virtual environment is activated correctly.
+
 ## Tests
 
 ```sh
