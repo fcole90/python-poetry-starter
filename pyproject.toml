@@ -1,11 +1,11 @@
 [project]
-name = "python-poetry-starter"
+name = "my-project"
 version = "0.1.0"
 description = ""
-authors = [{ name = "Fabio Colella", email = "fcole90@gmail.com" }]
+authors = [{ name = "Name Surname", email = "email@example.com" }]
 license = { text = "MIT" }
 readme = "README.md"
-requires-python = ">=3.12,<4.0"
+requires-python = ">=3.13,<4.0"
 dependencies = []
 
 [tool.poetry.requires-plugins]
@@ -26,7 +26,7 @@ testpaths = ["src"]
 python_files = ["*_test.py"]
 
 [tool.pyright]
-pythonVersion = "3.12"
+pythonVersion = "3.13"
 typeCheckingMode = "strict"
 useLibraryCodeForTypes = true
 exclude = ["**/__pycache__", "src/typings"]
@@ -41,10 +41,10 @@ reportUnknownModuleType = "warning"
 reportUnnecessaryTypeIgnoreComment = "warning"
 
 [tool.poetry]
-packages = [{ include = "src" }]
+packages = [{ include = "my_project", from = "src" }]
 
 [tool.poetry.scripts]
-main = "src.main:main"
+main = "my_project.main:main"
 
 [tool.poe.tasks]
 test = "python -m pytest"

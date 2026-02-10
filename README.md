@@ -8,6 +8,11 @@ This project is designed to be a quick-start for Python projects, providing a se
 - Typechecking setup with pyright
 - Continuous integration with GitHub Actions
 
+## Requirements
+
+- Python 3.13, if using [pyenv](https://github.com/pyenv/pyenv?tab=readme-ov-file#macos): `pyenv install 3.13.0 && pyenv local 3.13.0`
+- Poetry, if using [pipx](https://github.com/pypa/pipx?tab=readme-ov-file#on-macos) (recommended): `pipx install poetry`
+
 ## Installation
 
 ```sh
