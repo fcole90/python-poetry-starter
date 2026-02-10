@@ -13,7 +13,7 @@ poethepoet = { version = "~0.34.0", extras = ["poetry_plugin"] }
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"
-black = "^25.1.0"
+black = "^26.1.0"
 pyright = "^1.1.400"
 
 [build-system]
