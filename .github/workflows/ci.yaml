@@ -6,6 +6,11 @@ on:
     branches: [main]
     types: [opened, synchronize]
 
+# Required for dependabot merge
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   build_test_lint_typecheck:
     strategy:
@@ -34,3 +39,10 @@ jobs:
       - run: poetry poe test
       - run: poetry poe lint
       - run: poetry poe typecheck
+
+      - name: Dependabot auto-merge
+        if: github.event.pull_request.user.login == 'dependabot[bot]' && runner.os == 'Ubuntu'
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
