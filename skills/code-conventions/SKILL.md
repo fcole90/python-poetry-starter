@@ -73,6 +73,9 @@ Help the agent work within this Python template in a way that respects my struct
 - Use clear, explicit typing everywhere:
   - Avoid untyped containers like `dict`, `list`, `tuple`, `set`.
   - Prefer precise types such as `dict[str, str]`, `list[int]`, `tuple[str, int]`, etc.
+- For complex types, consider defining custom type aliases or data classes to improve readability.
+- Inference is encouraged over explicit typing when typing is sound.
+- For functions, always provide type annotations for parameters, but return types can be omitted if they are `None` or if the function has sound typing and is well-named. 
 - Treat Pyright strict mode seriously:
   - Fix type issues by improving annotations, adding type guards, or restructuring code.
   - Prefer explicit checks and type guards (e.g. `isinstance` checks) over `# type: ignore`.
