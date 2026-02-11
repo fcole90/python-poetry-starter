@@ -1,7 +1,6 @@
 ---
-name: conventions
+name: code-conventions
 description: Conventions and workflows for this Python project template using Poetry, Black, Pyright (strict), and pytest, with a feature-first layout
-version: 0.2.0
 ---
 
 # Project Conventions
