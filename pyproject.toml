@@ -22,7 +22,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
 minversion = "7.0"
-testpaths = ["src"]
+testpaths = ["src", "scripts"]
 python_files = ["*_test.py"]
 
 [tool.pyright]
@@ -44,6 +44,7 @@ reportUnnecessaryTypeIgnoreComment = "warning"
 packages = [{ include = "my_project", from = "src" }]
 
 [tool.poetry.scripts]
+update-from-upstream = "scripts.update_from_upstream:main"
 main = "my_project.main:main"
 
 [tool.poe.tasks]
