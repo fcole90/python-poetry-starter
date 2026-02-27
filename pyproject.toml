@@ -12,11 +12,7 @@ dependencies = []
 poethepoet = { version = "~0.34.0", extras = ["poetry_plugin"] }
 
 [dependency-groups]
-dev = [
-    "pytest>=9.0",
-    "black>=25.1.0",
-    "pyright>=1.1.400",
-]
+dev = ["pytest>=9.0", "black>=25.1.0", "pyright>=1.1.400"]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -46,7 +42,7 @@ reportUnnecessaryTypeIgnoreComment = "warning"
 [tool.poetry]
 packages = [{ include = "my_project", from = "src" }]
 
-[tool.poetry.scripts]
+[project.scripts]
 update-from-upstream = "scripts.update_from_upstream:main"
 main = "my_project.main:main"
 
