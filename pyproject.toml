@@ -43,7 +43,6 @@ reportUnnecessaryTypeIgnoreComment = "warning"
 packages = [{ include = "my_project", from = "src" }]
 
 [project.scripts]
-update-from-upstream = "scripts.update_from_upstream:main"
 main = "my_project.main:main"
 
 [tool.poe.tasks]
@@ -51,3 +50,5 @@ test = "python -m pytest"
 lint = "python -m black --check ./src"
 lint-fix = "python -m black ./src"
 typecheck = "python -m pyright ./src"
+
+update-from-upstream = "python scripts/update_from_upstream.py"
