@@ -11,17 +11,20 @@ dependencies = []
 [tool.poetry.requires-plugins]
 poethepoet = { version = "~0.34.0", extras = ["poetry_plugin"] }
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.3.5"
-black = "^25.1.0"
-pyright = "^1.1.400"
+[dependency-groups]
+dev = [
+    "pytest>=9.0",
+    "black>=25.1.0",
+    "pyright>=1.1.400",
+]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
-minversion = "7.0"
+minversion = "9.0"
+addopts = "--import-mode=importlib"
 testpaths = ["src", "scripts"]
 python_files = ["*_test.py"]
 
