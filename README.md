@@ -2,7 +2,7 @@
 
 This project is designed to be a quick-start for Python projects, providing a set of tools and configurations that make development easier. It includes:
 
-- Initial Poetry setup with local virtualenv and including poe task runner as plugin
+- Initial uv setup with local virtualenv and including poe task runner
 - Test setup with pytest
 - Linting setup with blake
 - Typechecking setup with pyright
@@ -10,31 +10,34 @@ This project is designed to be a quick-start for Python projects, providing a se
 
 ## Requirements
 
-- Python 3.13, if using [pyenv](https://github.com/pyenv/pyenv?tab=readme-ov-file#macos): `pyenv install 3.13.0 && pyenv local 3.13.0`
-- Poetry, if using [pipx](https://github.com/pypa/pipx?tab=readme-ov-file#on-macos) (recommended): `pipx install poetry`
+- macOS/Linux: `curl -LsSf https://astral.sh/uv/install.sh | sh`
+or
+- Windows: `powershell -c "irm https://astral.sh/uv/install.ps1 | iex"`
+
+uv can manage Python versions directly. To install Python 3.13 via uv: `uv python install 3.13`
 
 ## Installation
 
 ```sh
-poetry install
+uv sync
 ```
 
-After this step you may want to close and reopen your terminal or IDE to ensure that the Poetry-managed virtual environment is activated correctly.
+After this step you may want to close and reopen your terminal or IDE to ensure that the uv-managed virtual environment is activated correctly.
 
 ## Tests
 
 ```sh
-poetry poe test
+uv run poe test
 ```
 
 ## Linting
 
 ```sh
-poetry poe lint
+uv run poe lint
 ```
 
 ## Typechecking
 
 ```sh
-poetry poe typecheck
+uv run poe typecheck
 ```
