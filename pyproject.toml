@@ -52,3 +52,4 @@ lint-fix = "python -m black ./src"
 typecheck = "python -m pyright ./src"
 
 update-from-upstream = "python scripts/update_from_upstream.py"
+transition-to-uv = "python scripts/transition_to_uv.py"
