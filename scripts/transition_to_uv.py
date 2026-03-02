@@ -147,7 +147,7 @@ def main() -> None:
     print("Running uv sync...")
     subprocess.run(["uv", "sync"], check=True, cwd=ROOT)
 
-    print("Done.")
+    print("Done. Restart your shell and IDEs to activate the new environment, and remove this script.")
 
 
 if __name__ == "__main__":
