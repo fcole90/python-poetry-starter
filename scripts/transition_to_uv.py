@@ -147,8 +147,7 @@ def main() -> None:
     print("Running uv sync...")
     subprocess.run(["uv", "sync"], check=True, cwd=ROOT)
 
-    delete_if_exists(ROOT / "scripts" / "update_from_upstream.py")
-    delete_if_exists(ROOT / "scripts" / "transition_to_uv.py")
+    delete_if_exists(ROOT / "scripts")
 
     print("Done.")
 
