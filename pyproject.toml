@@ -51,5 +51,10 @@ lint = "python -m black --check ./src"
 lint-fix = "python -m black ./src"
 typecheck = "python -m pyright ./src"
 
-transition-to-uv = { "shell" = "python scripts/transition_to_uv.py; python -c \"from pathlib import Path; Path('scripts/transition_to_uv.py').unlink()\"" }
+transition-to-uv = [
+  { expr = "__import__('shutil').rmtree('.venv', ignore_errors=True)" },
+  { "cmd" = "python scripts/transition_to_uv.py" },
+  { expr = "__import__('pathlib').Path('scripts/transition_to_uv.py').unlink(missing_ok=True)" },
+]
+
 update-from-upstream = "python scripts/update_from_upstream.py"
