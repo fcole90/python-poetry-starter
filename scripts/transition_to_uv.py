@@ -147,8 +147,6 @@ def main() -> None:
     print("Running uv sync...")
     subprocess.run(["uv", "sync"], check=True, cwd=ROOT)
 
-    delete_if_exists(ROOT / "scripts")
-
     print("Done.")
 
 
