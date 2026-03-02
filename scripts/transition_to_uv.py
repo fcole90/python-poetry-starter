@@ -66,10 +66,7 @@ def insert_hatch_section(content: str, packages: list[str]) -> str:
     if "[tool.hatch.build.targets.wheel]" in content:
         return content
     packages_str = ", ".join(f'"{p}"' for p in packages)
-    hatch_block = (
-        f"[tool.hatch.build.targets.wheel]\n"
-        f"packages = [{packages_str}]\n"
-    )
+    hatch_block = f"[tool.hatch.build.targets.wheel]\n" f"packages = [{packages_str}]\n"
     lines = content.splitlines(keepends=True)
     result: list[str] = []
     in_build_system = False
@@ -145,11 +142,14 @@ def main() -> None:
 
     delete_if_exists(ROOT / "poetry.lock")
     delete_if_exists(ROOT / "poetry.toml")
+    delete_if_exists(ROOT / ".venv")
 
     print("Running uv sync...")
     subprocess.run(["uv", "sync"], check=True, cwd=ROOT)
 
-    Path(__file__).unlink()
+    delete_if_exists(ROOT / "scripts" / "update_from_upstream.py")
+    delete_if_exists(ROOT / "scripts" / "transition_to_uv.py")
+
     print("Done.")
 
 
