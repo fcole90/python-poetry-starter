@@ -2,7 +2,6 @@
 """Migrate pyproject.toml from Poetry to uv, then self-clean."""
 
 import re
-import subprocess
 import sys
 from pathlib import Path
 
@@ -142,12 +141,18 @@ def main() -> None:
 
     delete_if_exists(ROOT / "poetry.lock")
     delete_if_exists(ROOT / "poetry.toml")
-    delete_if_exists(ROOT / ".venv")
 
-    print("Running uv sync...")
-    subprocess.run(["uv", "sync"], check=True, cwd=ROOT)
+    print("Update complete. ⚠️ Please review changes.")
 
-    print("Done. Restart your shell and IDEs to activate the new environment, and remove this script.")
+    print("Next steps:\n"
+          "1. Remove .venv and this migration script.\n"
+          "2. Run 'uv sync' to install dependencies and generate the new lockfile.\n"
+          "3. Review changes, test your project to ensure everything works as expected.\n"
+          "4. Commit the changes with a message like 'chore: Migrate from Poetry to uv'."
+          )
+
+    
+
 
 
 if __name__ == "__main__":
